@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.js"></script>
+
+    <script defer src="app.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css"
+    />
+  </head>
+  <body>
+    <header>RETRO DRAW</header>
+    <main>
+      <section class="palette"></section>
+      <section class="grid"></section>
+      <section class="controls">
+        <button class="fill-all">FILL ALL CELLS</button>
+        <button class="fill-empty">FILL EMPTY CELLS</button>
+        <button class="clear">CLEAR ALL CELLS</button>
+        <div>Add New Color To Palette</div>
+        <input id="color-picker" value="" />
+        <div>Grid Options</div>
+        <span class="numberInputs">
+          <div>Rows:</div>
+          <input class="inputsRows" type="number" id="numRows" />
+          <div>Columns:</div>
+          <input class="inputsCols" type="number" id="numCols" />
+        </span>
+        <button class="create-grid">CREATE GRID</button>
+      </section>
+    </main>
+  </body>
+</html>
