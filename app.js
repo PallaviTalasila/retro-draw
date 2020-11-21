@@ -11,7 +11,6 @@ let PALETTE = [
 ];
 let mouseIsDown = false;
 
-
 function makePalette(color) {
   if (!color && $(".palette").is(":empty")) {
     for (let index = 0; index < PALETTE.length; index = index + 1) {
@@ -47,7 +46,6 @@ function makePalette(color) {
 function makeGrid(rows, cols) {
   if (rows && cols) {
     //Add additional two pixels to accomodate the border length
-
     $(".grid").css({ height: 64 * rows + 2, width: 64 * cols + 2 });
     for (let index = 0; index < rows * cols; index = index + 1) {
       $(".grid").append($("<div/>").addClass("cell"));
@@ -139,18 +137,11 @@ function onCreateGridClick() {
   let valueRows = $("#numRows").val();
   let valueCols = $("#numCols").val();
 
-  if (valueRows < 0) {
-    alert("Please choose a Positive Number for Rows");
-    makeGrid(8, 8);
-  }
-
-  if (valueCols < 0) {
-    alert("Please choose a Positive Number for Columns");
-    makeGrid(8, 8);
-  }
-
-  if (valueRows === 0 && valueCols === 0) makeGrid(8, 8);
-  else {
+  if (valueRows <= 0) {
+    alert("Please choose a Positive Number Greater Than Zero for Rows");
+  } else if (valueCols <= 0) {
+    alert("Please choose a Positive Number Greater Than Zero for Columns");
+  } else {
     $(".grid").html("");
     makeGrid(valueRows, valueCols);
     $(".grid .cell").click(onGridClick);
@@ -160,7 +151,6 @@ function onCreateGridClick() {
     $(".controls .create-grid").click(onCreateGridClick);
   }
 }
-
 
 makePalette();
 makeGrid();
