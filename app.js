@@ -68,6 +68,8 @@ function onGridClick() {
   ) {
     $(this).css({ "background-color": "rgba(0, 0, 0, 0)" });
   } else {
+    // By calling this in here you're not adding the event handlers until a cell is clicked.
+    // This should be called outside of this function.
     colorMoreThanOne();
     $(this).css("background-color", $(".active").css("background-color"));
   }
