@@ -68,7 +68,8 @@ function onGridClick() {
   ) {
     $(this).css({ "background-color": "rgba(0, 0, 0, 0)" });
   } else {
-    colorMoreThanOne();
+    
+  
     $(this).css("background-color", $(".active").css("background-color"));
   }
 }
@@ -145,6 +146,7 @@ function onCreateGridClick() {
     $(".grid").html("");
     makeGrid(valueRows, valueCols);
     $(".grid .cell").click(onGridClick);
+    colorMoreThanOne();
     $(".controls .clear").click(onClearClick);
     $(".controls .fill-all").click(onFillAllClick);
     $(".controls .fill-empty").click(onFillEmptyClick);
@@ -156,6 +158,7 @@ makePalette();
 makeGrid();
 $(".palette button").click(onPaletteClick);
 $(".grid .cell").click(onGridClick);
+colorMoreThanOne();
 $(".controls .clear").click(onClearClick);
 $(".controls .fill-all").click(onFillAllClick);
 $(".controls .fill-empty").click(onFillEmptyClick);
